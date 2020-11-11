@@ -5,9 +5,13 @@
 let state = 'title';
 let cnv;
 let points = 0;
+let w = 600;
+let h = 600;
 
 function setup() {
-  cnv = createCanvas(600, 600);
+  cnv = createCanvas(w, h);
+  
+  textFont('monospace');
 }
 
 function draw() {
@@ -31,13 +35,15 @@ function draw() {
  
  
 function title() {
-  background(100);
+  background(0);
+
   textSize(80);
-  stroke(255);
-  text('MY GAME', 100, 100);
+  fill(255);
+  textAlign(CENTER);
+  text('MY GAME', w/2, h/5);
 
   textSize(30);
-  text('Click anywhere to start', 100, 300);
+  text('Click anywhere to start', w/2, h/2);
 }
 
 function titleMouseClicked() {
@@ -47,7 +53,9 @@ function titleMouseClicked() {
 
 function level1 () {
   background(150, 200, 250);
-  text('Click for points', 0, height - 30);
+
+  fill(0);
+  text('Click for points', w/2, h - 30);
 }
 
 function level1MouseClicked() {
@@ -61,12 +69,13 @@ function level1MouseClicked() {
 
 function youWin () {
   background(250, 150, 150);
+
   textSize(80);
-  stroke(255);
-  text('YOU WIN!!', 100, 100);
+  fill(0);
+  text('YOU WIN!!', w/2, h/2);
 
   textSize(30);
-  text('Click anywhere to restart', 100, 300);
+  text('Click anywhere to restart', w/2, h * 3/4);
 }
 
 function youWinMouseClicked () {
