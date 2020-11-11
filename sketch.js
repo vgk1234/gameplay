@@ -20,14 +20,17 @@ function draw() {
       title();
       cnv.mouseClicked(titleMouseClicked);
       break;
+
     case 'level 1':
       level1();
       cnv.mouseClicked(level1MouseClicked);
       break;
+
     case 'you win':
       youWin();
       cnv.mouseClicked(youWinMouseClicked);
       break;
+      
     default:
       break;
   }
