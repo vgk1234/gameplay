@@ -104,6 +104,16 @@ function level1() {
     coins[i].move();
   }
 
+  // coins.forEach(function(coin) {
+  //   coin.display();
+  //   coin.move();
+  // })
+  
+  // for (let coin of coins) {
+  //      coin.display();
+  //      coin.move();
+  // }
+
   for (let i = coins.length - 1; i >= 0; i--) {
     if (dist(player.x, player.y, coins[i].x, coins[i].y) <= (player.r + coins[i].r) / 2) {
       points++;
