@@ -9,6 +9,13 @@ let w = 600;
 let h = 600;
 let player;
 let coins = [];
+let playerImg;
+let coinImg;
+
+function preload() {
+  playerImg = loadImage('Assets/emoji-player.jpg');
+  coinImg = loadImage('Assets/coin.jpg');
+}
 
 function setup() {
 
@@ -115,10 +122,13 @@ function level1() {
   // }
 
   for (let i = coins.length - 1; i >= 0; i--) {
-    if (dist(player.x, player.y, coins[i].x, coins[i].y) <= (player.r + coins[i].r) / 2) {
+    if(dist(player.x, player.y, coins[i].x, coins[i].y) <= (player.r + coins[i].r) / 2) {
       points++;
       console.log(points);
       coins.splice(i, 1);
+    } else if(coins[i].y > h) {
+      coins.splice(i, 1);
+      console.log('Coin is out of town');
     }
   }
 

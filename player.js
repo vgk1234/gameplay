@@ -9,7 +9,8 @@ class Player {
     }
 
     display() {
-        rect(this.x, this.y, this.r, this.r);
+        image(playerImg, this.x, this.y, this.r, this.r);
+        // rect(this.x, this.y, this.r, this.r);
     }
 
     move() {
@@ -17,16 +18,24 @@ class Player {
             case 'still':
                 break;
             case 'up':
+                if (this.y > 0) {
+                    this.y -= this.speed;
+                }
                 this.y -= this.speed;
-                break;
             case 'down':
-                this.y += this.speed;
+                if (this.y < h - this.r) {
+                    this.y += this.speed;
+                }
                 break;
             case 'right':
-                this.x += this.speed;
+                if (this.x < w - this.r) {
+                    this.x += this.speed;
+                }
                 break;
             case 'left':
-                this.x -= this.speed;
+                if (this.x > 0) {
+                    this.x -= this.speed;
+                }
                 break;
             default:
                 break;
