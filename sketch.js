@@ -41,7 +41,7 @@ function draw() {
 
     case 'level 1':
       level1();
-      cnv.mouseClicked(level1MouseClicked);
+      // cnv.mouseClicked(level1MouseClicked);
       break;
 
     case 'you win':
@@ -81,6 +81,7 @@ function title() {
 
   textSize(30);
   text('Click anywhere to start', w / 2, h / 2);
+  text('Earn 20 points to win', w / 2, h * 3 / 4)  
 
 }
 
@@ -129,6 +130,8 @@ function level1() {
     } else if(coins[i].y > h) {
       coins.splice(i, 1);
       console.log('Coin is out of town');
+    } else if (points >= 20) {
+      state = 'you win';
     }
   }
 
@@ -136,16 +139,16 @@ function level1() {
 
 }
 
-function level1MouseClicked() {
+// function level1MouseClicked() {
 
-  points++;
-  console.log('points =' + points);
+//   points++;
+//   console.log('points =' + points);
 
-  if (points >= 10) {
-    state = 'you win';
-  }
+//   if (points >= 10) {
+//     state = 'you win';
+//   }
 
-}
+// }
 
 function youWin() {
 
