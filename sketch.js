@@ -5,8 +5,8 @@
 let state = 'title';
 let cnv;
 let points = 0;
-let w = 600;
-let h = 600;
+let w = 500;
+let h = 500;
 let player;
 let coins = [];
 let playerImg;
@@ -80,8 +80,7 @@ function title() {
   text('MY GAME', w / 2, h / 5);
 
   textSize(30);
-  text('Click anywhere to start', w / 2, h / 2);
-  text('Earn 20 points to win', w / 2, h * 3 / 4)  
+  text('Click anywhere to start', w / 2, h / 2);  
 
 }
 
