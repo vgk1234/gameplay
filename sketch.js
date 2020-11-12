@@ -8,7 +8,7 @@ let points = 0;
 let w = 600;
 let h = 600;
 let player;
-let coin;
+let coins = [];
 
 function setup() {
 
@@ -18,7 +18,8 @@ function setup() {
 
   player = new Player();
 
-  coin = new Coin();
+  // coins[0] = new Coin();
+  coins.push(new Coin());
 
 }
 
@@ -85,7 +86,11 @@ function titleMouseClicked() {
 
 function level1() {
 
-  background(150, 200, 250);
+  background(100, 100, 150);
+
+  if(random(1) <= 0.01) {
+    coins.push(new Coin());
+  }
 
   // fill(0);
   // text('Click for points', w/2, h - 30);
@@ -93,12 +98,18 @@ function level1() {
   player.display();
   player.move();
 
-  coin.display();
-  coin.move();
 
-  if (dist(player.x, player.y, coin.x, coin.y) <= (player.r + coin.r) / 2) {
-    points++;
-    console.log(points);
+  for(let i = 0; i < coins.length; i++) {
+    coins[i].display();
+    coins[i].move();
+  }
+
+  for (let i = coins.length - 1; i >= 0; i--) {
+    if (dist(player.x, player.y, coins[i].x, coins[i].y) <= (player.r + coins[i].r) / 2) {
+      points++;
+      console.log(points);
+      coins.splice(i, 1);
+    }
   }
 
   text(`points: ${points}`, w / 4, h - 30);

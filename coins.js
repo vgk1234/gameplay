@@ -1,4 +1,3 @@
-
 class Coin {
 
     constructor() {
