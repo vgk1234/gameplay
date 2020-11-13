@@ -7,6 +7,7 @@ let cnv;
 let points = 0;
 let w = 500;
 let h = 500;
+let value = 0;
 let player;
 let coins = [];
 let playerImg;
@@ -70,6 +71,10 @@ function keyPressed() {
   }
 }
 
+function keyReleased() {
+    player.direction = 'still';
+}
+
 function title() {
 
   background(0);
@@ -120,6 +125,7 @@ function level1() {
   //      coin.display();
   //      coin.move();
   // }
+
 
   for (let i = coins.length - 1; i >= 0; i--) {
     if(dist(player.x, player.y, coins[i].x, coins[i].y) <= (player.r + coins[i].r) / 2) {
