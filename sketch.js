@@ -14,8 +14,8 @@ let playerImg;
 let coinImg;
 
 function preload() {
-  playerImg = loadImage('Assets/emoji-player.jpg');
-  coinImg = loadImage('Assets/coin.jpg');
+  playerImg = loadImage('Assets/player-drawing.png');
+  coinImg = loadImage('Assets/coin-drawing.png');
 }
 
 function setup() {
