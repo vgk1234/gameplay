@@ -69,7 +69,7 @@ function keyPressed() {
 }
 
 function keyReleased() {
-    player.direction = 'still';
+  player.direction = 'still';
 }
 
 function title() {
@@ -82,7 +82,7 @@ function title() {
   text('MY GAME', w / 2, h / 5);
 
   textSize(30);
-  text('Click anywhere to start', w / 2, h / 2);  
+  text('Click anywhere to start', w / 2, h / 2);
 
 }
 
@@ -97,7 +97,7 @@ function level1() {
 
   background(100, 100, 150);
 
-  if(random(1) <= 0.01) {
+  if (random(1) <= 0.01) {
     coins.push(new Coin());
   }
 
@@ -105,17 +105,17 @@ function level1() {
   player.move();
 
 
-  for(let i = 0; i < coins.length; i++) {
+  for (let i = 0; i < coins.length; i++) {
     coins[i].display();
     coins[i].move();
   }
 
   for (let i = coins.length - 1; i >= 0; i--) {
-    if(dist(player.x, player.y, coins[i].x, coins[i].y) <= (player.r + coins[i].r) / 2) {
+    if (dist(player.x, player.y, coins[i].x, coins[i].y) <= (player.r + coins[i].r) / 2) {
       points++;
       console.log(points);
       coins.splice(i, 1);
-    } else if(coins[i].y > h) {
+    } else if (coins[i].y > h) {
       coins.splice(i, 1);
       console.log('Coin is out of town');
     } else if (points >= 20) {
