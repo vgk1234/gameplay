@@ -1,7 +1,6 @@
 'use strict';
 
 
-
 let state = 'title';
 let cnv;
 let points = 0;
@@ -26,7 +25,6 @@ function setup() {
 
   player = new Player();
 
-  // coins[0] = new Coin();
   coins.push(new Coin());
 
 }
@@ -42,7 +40,6 @@ function draw() {
 
     case 'level 1':
       level1();
-      // cnv.mouseClicked(level1MouseClicked);
       break;
 
     case 'you win':
@@ -104,9 +101,6 @@ function level1() {
     coins.push(new Coin());
   }
 
-  // fill(0);
-  // text('Click for points', w/2, h - 30);
-
   player.display();
   player.move();
 
@@ -115,17 +109,6 @@ function level1() {
     coins[i].display();
     coins[i].move();
   }
-
-  // coins.forEach(function(coin) {
-  //   coin.display();
-  //   coin.move();
-  // })
-  
-  // for (let coin of coins) {
-  //      coin.display();
-  //      coin.move();
-  // }
-
 
   for (let i = coins.length - 1; i >= 0; i--) {
     if(dist(player.x, player.y, coins[i].x, coins[i].y) <= (player.r + coins[i].r) / 2) {
@@ -143,17 +126,6 @@ function level1() {
   text(`points: ${points}`, w / 4, h - 30);
 
 }
-
-// function level1MouseClicked() {
-
-//   points++;
-//   console.log('points =' + points);
-
-//   if (points >= 10) {
-//     state = 'you win';
-//   }
-
-// }
 
 function youWin() {
 
